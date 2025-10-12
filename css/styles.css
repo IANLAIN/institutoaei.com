@@ -329,6 +329,11 @@ h3 {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Hide mobile-only social links in desktop */
+.navbar__menu-social {
+  display: none;
+}
+
 /* Navbar scrolled state */
 .navbar.scrolled {
   background-color: rgba(255, 255, 255, 0.98);
@@ -358,7 +363,7 @@ h3 {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    max-height: 500px;
+    max-height: 600px;
   }
   
   .navbar__nav {
@@ -381,6 +386,56 @@ h3 {
     border-bottom: none;
   }
   
+  .navbar__menu-social {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.75rem;
+    border-top: 2px solid var(--gray-200);
+    margin-top: 0.5rem;
+  }
+  
+  .navbar__menu-social-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--gray-50);
+    color: var(--gray-700);
+    transition: var(--transition-fast);
+    text-decoration: none;
+  }
+  
+  .navbar__menu-social-link i {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  
+  .navbar__menu-social-link span {
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  
+  .navbar__menu-social-link[href*="facebook"]:hover {
+    background-color: #1877f2;
+    color: white;
+  }
+  
+  .navbar__menu-social-link[href*="instagram"]:hover {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    color: white;
+  }
+  
+  .navbar__menu-social-link[href*="whatsapp"]:hover {
+    background-color: #25D366;
+    color: white;
+  }
+  
   .navbar__actions {
     flex-direction: row;
     gap: 0.5rem;
@@ -388,8 +443,7 @@ h3 {
   }
   
   .navbar__social {
-    display: flex;
-    margin-right: 0.5rem;
+    display: none;
   }
   
   .btn--login {
@@ -429,7 +483,7 @@ h3 {
 
 .hero__banner {
   position: absolute;
-  top: 200px;
+  top: 196px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -1263,14 +1317,18 @@ h3 {
     font-size: 1.2rem;
   }
   
+  .navbar__social {
+    display: none;
+  }
+  
   .hero__content {
     margin-top: 400px;
     padding: 0 16px;
   }
   
   .hero__banner {
-    top: 150px;
-    max-width: 90%;
+    top: 100px;
+    max-width: 100%;
     padding: 0 16px;
   }
   
@@ -1375,8 +1433,8 @@ h3 {
   }
   
   .hero__banner {
-    top: 120px;
-    max-width: 95%;
+    top: 90px;
+    max-width: 100%;
     padding: 0 8px;
   }
   
